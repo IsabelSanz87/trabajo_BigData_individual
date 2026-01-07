@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Isabel Sanz Miquel">
+<meta name="description" content="Análisis del nivel cultural de los países próximos a españa y el nivel de riqueza">
+<title>La cultura del esfuerzo y la riqueza – Isabel Sanz | Big Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./imagenes/my_favicon_uv.jpeg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-f54fa83ccd8f86fe7238c9291c42d766.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-90f45875544281198bad5d67f820d255.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: black;
+background-image: url(imagenes/fondo.png);
+background-size: cover;
+      }
+</style>
+<link rel="shortcut icon" href="imagenes/uv.png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./imagenes/uv.png" alt="" class="navbar-logo light-content"><img src="./imagenes/uv.png" alt="" class="navbar-logo dark-content"></a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Isabel Sanz | Big Data</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item compact">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house-door" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="./sobre_mi.html"> 
+<span class="menu-text">Sobre mí</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./my_trabajo_BigData.html" aria-current="page"> 
+<span class="menu-text">Trabajo individual</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/IsabelSanz87"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:isanzmi@alumni.uv.es"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <div class="quarto-title-block"><div><h1 class="title">La cultura del esfuerzo y la riqueza</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Enseñar el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Esconder el código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver el código</a></li></ul></div></div>
+                  <div>
+        <div class="description">
+          <p>Análisis del nivel cultural de los países próximos a españa y el nivel de riqueza</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">trabajo BigData</div>
+                <div class="quarto-category">estadístico</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-right">
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-heading">Afiliación</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Isabel Sanz Miquel </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.uv.es">
+              Universitat de València
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-right">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de Publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">1 de enero de 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Índice</h2>
+   
+  <ul>
+<li><a href="#intro-recuperando-la-cultura" id="toc-intro-recuperando-la-cultura" class="nav-link active" data-scroll-target="#intro-recuperando-la-cultura">Intro: Recuperando la cultura</a></li>
+  <li><a href="#ranking-pa%C3%ADses-m%C3%A1ximos-y-m%C3%ADnimos." id="toc-ranking-países-máximos-y-mínimos." class="nav-link" data-scroll-target="#ranking-pa%C3%ADses-m%C3%A1ximos-y-m%C3%ADnimos.">Ranking países máximos y mínimos.</a></li>
+  <li>
+<a href="#an%C3%A1lisis-espacial-con-coropleta" id="toc-análisis-espacial-con-coropleta" class="nav-link" data-scroll-target="#an%C3%A1lisis-espacial-con-coropleta">Análisis espacial con coropleta</a>
+  <ul class="collapse">
+<li><a href="#gdp" id="toc-gdp" class="nav-link" data-scroll-target="#gdp">GDP:</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#uni%C3%B3n" id="toc-unión" class="nav-link" data-scroll-target="#uni%C3%B3n">UNIÓN</a>
+  <ul class="collapse">
+<li><a href="#informaci%C3%B3n-sobre-la-sesi%C3%B3n" id="toc-información-sobre-la-sesión" class="nav-link" data-scroll-target="#informaci%C3%B3n-sobre-la-sesi%C3%B3n">Información sobre la sesión</a></li>
+  </ul>
+</li>
+  </ul><div class="quarto-other-links"><h2>Otros Enlaces</h2><ul><li><a href="https://perezp44.github.io/intro-ds-25-26-web/"><i class="bi bi-link-45deg"></i>Web del curso</a></li><li><a href="https://perezp44.github.io/intro-ds-25-26-web/05-trabajos-estudiantes.html"><i class="bi bi-link-45deg"></i>Trabajos de mis compañeros</a></li><li><a href="https://github.com/IsabelSanz87/trabajo_BigData_individual"><i class="bi bi-link-45deg"></i>Repo del trabajo</a></li></ul></div></nav>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content"><section id="intro-recuperando-la-cultura" class="level2"><h2 class="anchored" data-anchor-id="intro-recuperando-la-cultura">Intro: Recuperando la cultura</h2>
+<p>Vivimos en un mundo acelerado. En mis canales divulgo la importancia de la pausa, el honor a los antepasados y, sobre todo, la <strong>cultura del esfuerzo</strong>. Pero, ¿es solo una filosofía o tiene un impacto real en la prosperidad de un país? En este trabajo analizo datos oficiales de la <strong>OCDE</strong> de los últimos 20 años para responder a una pregunta: <strong>¿Nos hace la cultura más ricos?</strong>.</p>
+<p>Para este estudio, parto de dos datasets con origen en la base de datos de la OCDE: tasas de educación terciaria y evolución del PIB per cápita. He optado por los datos de la OCDE porque me proporcionaban los años de evolución, en el INE no los conseguí. El primer paso es la introducción y limpieza:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages(c("rnaturalearth", "rnaturalearthdata", "sf"))</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">library</span>(rnaturalearthdata)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-13"><a href="#cb1-13"></a>ruta_education <span class="ot">&lt;-</span> <span class="st">"./datos/data_education.csv"</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>data_education <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(ruta_education)</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>ruta_gdp <span class="ot">&lt;-</span> <span class="st">"./datos/data_gdp.csv"</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>data_gdp <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(ruta_gdp)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<hr></section><section id="ranking-países-máximos-y-mínimos." class="level2"><h2 class="anchored" data-anchor-id="ranking-países-máximos-y-mínimos.">Ranking países máximos y mínimos.</h2>
+<p>Vamos a arreglar los datos y a representar las tablas</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>data_education <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(data_education)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>education_clean <span class="ot">&lt;-</span> data_education <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">select</span>(<span class="at">iso3c =</span> ref_area, <span class="at">anio =</span> time_period, <span class="at">tasa_educacion =</span> obs_value) <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="at">anio =</span> <span class="fu">as.numeric</span>(anio), </span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="at">tasa_educacion =</span> <span class="fu">as.numeric</span>(tasa_educacion), </span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="at">pais =</span> <span class="fu">countrycode</span>(iso3c, <span class="at">origin =</span> <span class="st">"iso3c"</span>, <span class="at">destination =</span> <span class="st">"un.name.es"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(tasa_educacion), <span class="sc">!</span><span class="fu">is.na</span>(pais)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">arrange</span>(pais, anio)</span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>paises_interes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"España"</span>, <span class="st">"Francia"</span>, <span class="st">"Alemania"</span>, <span class="st">"Italia"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a>education_clean <span class="sc">|&gt;</span> </span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">filter</span>(pais <span class="sc">%in%</span> paises_interes) <span class="sc">|&gt;</span> </span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> anio, <span class="at">y =</span> tasa_educacion, <span class="at">color =</span> pais)) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb2-18"><a href="#cb2-18"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span>       </span>
+<span id="cb2-19"><a href="#cb2-19"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>            </span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-21"><a href="#cb2-21"></a>    <span class="at">title =</span> <span class="st">"Evolución de la formación superior en Europa"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22"></a>    <span class="at">subtitle =</span> <span class="st">"Porcentaje de población adulta (25-64) con estudios terciarios"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23"></a>    <span class="at">y =</span> <span class="st">"Porcentaje (%)"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24"></a>    <span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="at">color =</span> <span class="st">"País"</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28"></a></span>
+<span id="cb2-29"><a href="#cb2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="co">#TABLAS:</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="co">#Primero calculo la evolución:</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a>ranking_evolucion <span class="ot">&lt;-</span> education_clean <span class="sc">|&gt;</span></span>
+<span id="cb2-33"><a href="#cb2-33"></a>  <span class="fu">group_by</span>(pais) <span class="sc">|&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-35"><a href="#cb2-35"></a>    <span class="at">anio_inicio =</span> <span class="fu">min</span>(anio),</span>
+<span id="cb2-36"><a href="#cb2-36"></a>    <span class="at">anio_fin =</span> <span class="fu">max</span>(anio),</span>
+<span id="cb2-37"><a href="#cb2-37"></a>    <span class="at">valor_inicial =</span> <span class="fu">first</span>(tasa_educacion, <span class="at">order_by =</span> anio),</span>
+<span id="cb2-38"><a href="#cb2-38"></a>    <span class="at">valor_final =</span> <span class="fu">last</span>(tasa_educacion, <span class="at">order_by =</span> anio)</span>
+<span id="cb2-39"><a href="#cb2-39"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-40"><a href="#cb2-40"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-41"><a href="#cb2-41"></a>    <span class="at">crecimiento_total =</span> valor_final <span class="sc">-</span> valor_inicial,</span>
+<span id="cb2-42"><a href="#cb2-42"></a>    <span class="at">periodo =</span> <span class="fu">paste0</span>(anio_inicio, <span class="st">"-"</span>, anio_fin)</span>
+<span id="cb2-43"><a href="#cb2-43"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-44"><a href="#cb2-44"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb2-45"><a href="#cb2-45"></a></span>
+<span id="cb2-46"><a href="#cb2-46"></a>ranking_evolucion <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(crecimiento_total))  </span>
+<span id="cb2-47"><a href="#cb2-47"></a></span>
+<span id="cb2-48"><a href="#cb2-48"></a><span class="co">#Luego hago la tabla:</span></span>
+<span id="cb2-49"><a href="#cb2-49"></a></span>
+<span id="cb2-50"><a href="#cb2-50"></a><span class="co"># Primera tabla: top 3 con mayor crecimiento</span></span>
+<span id="cb2-51"><a href="#cb2-51"></a>tabla_top <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span></span>
+<span id="cb2-52"><a href="#cb2-52"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(crecimiento_total)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-53"><a href="#cb2-53"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span>                         </span>
+<span id="cb2-54"><a href="#cb2-54"></a>  <span class="fu">select</span>(pais, periodo, valor_inicial, valor_final, crecimiento_total) <span class="sc">|&gt;</span></span>
+<span id="cb2-55"><a href="#cb2-55"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-56"><a href="#cb2-56"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb2-57"><a href="#cb2-57"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Líderes en crecimiento crecimiento**"</span>),</span>
+<span id="cb2-58"><a href="#cb2-58"></a>    <span class="at">subtitle =</span> <span class="st">"Países con mayor crecimiento en población con educación superior"</span></span>
+<span id="cb2-59"><a href="#cb2-59"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-60"><a href="#cb2-60"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb2-61"><a href="#cb2-61"></a>    <span class="at">columns =</span> <span class="fu">c</span>(valor_inicial, valor_final, crecimiento_total),</span>
+<span id="cb2-62"><a href="#cb2-62"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb2-63"><a href="#cb2-63"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-64"><a href="#cb2-64"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb2-65"><a href="#cb2-65"></a>    <span class="at">pais =</span> <span class="st">"País"</span>,</span>
+<span id="cb2-66"><a href="#cb2-66"></a>    <span class="at">periodo =</span> <span class="st">"Periodo"</span>,</span>
+<span id="cb2-67"><a href="#cb2-67"></a>    <span class="at">valor_inicial =</span> <span class="st">"% del inicio"</span>,</span>
+<span id="cb2-68"><a href="#cb2-68"></a>    <span class="at">valor_final =</span> <span class="st">"% Actual (Total)"</span>,</span>
+<span id="cb2-69"><a href="#cb2-69"></a>    <span class="at">crecimiento_total =</span> <span class="st">"Crecimiento (+)"</span></span>
+<span id="cb2-70"><a href="#cb2-70"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-71"><a href="#cb2-71"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb2-72"><a href="#cb2-72"></a>    <span class="at">columns =</span> crecimiento_total,</span>
+<span id="cb2-73"><a href="#cb2-73"></a>    <span class="at">method =</span> <span class="st">"numeric"</span>,</span>
+<span id="cb2-74"><a href="#cb2-74"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"lightgreen"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb2-75"><a href="#cb2-75"></a>  )</span>
+<span id="cb2-76"><a href="#cb2-76"></a></span>
+<span id="cb2-77"><a href="#cb2-77"></a>tabla_top</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div id="fzwhgyteiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fzwhgyteiy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fzwhgyteiy thead, #fzwhgyteiy tbody, #fzwhgyteiy tfoot, #fzwhgyteiy tr, #fzwhgyteiy td, #fzwhgyteiy th {
+  border-style: none;
+}
+
+#fzwhgyteiy p {
+  margin: 0;
+  padding: 0;
+}
+
+#fzwhgyteiy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fzwhgyteiy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fzwhgyteiy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fzwhgyteiy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fzwhgyteiy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fzwhgyteiy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fzwhgyteiy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fzwhgyteiy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fzwhgyteiy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fzwhgyteiy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fzwhgyteiy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fzwhgyteiy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fzwhgyteiy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fzwhgyteiy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fzwhgyteiy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fzwhgyteiy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fzwhgyteiy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fzwhgyteiy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fzwhgyteiy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fzwhgyteiy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fzwhgyteiy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fzwhgyteiy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fzwhgyteiy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fzwhgyteiy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fzwhgyteiy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fzwhgyteiy .gt_left {
+  text-align: left;
+}
+
+#fzwhgyteiy .gt_center {
+  text-align: center;
+}
+
+#fzwhgyteiy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fzwhgyteiy .gt_font_normal {
+  font-weight: normal;
+}
+
+#fzwhgyteiy .gt_font_bold {
+  font-weight: bold;
+}
+
+#fzwhgyteiy .gt_font_italic {
+  font-style: italic;
+}
+
+#fzwhgyteiy .gt_super {
+  font-size: 65%;
+}
+
+#fzwhgyteiy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fzwhgyteiy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fzwhgyteiy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fzwhgyteiy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fzwhgyteiy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fzwhgyteiy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fzwhgyteiy .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#fzwhgyteiy .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fzwhgyteiy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="5" class="gt_heading gt_title gt_font_normal"><strong>Líderes en crecimiento crecimiento</strong></td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Países con mayor crecimiento en población con educación superior</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="pais" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">País</th>
+<th id="periodo" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Periodo</th>
+<th id="valor_inicial" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">% del inicio</th>
+<th id="valor_final" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">% Actual (Total)</th>
+<th id="crecimiento_total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Crecimiento (+)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="pais">Portugal</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">8.8</td>
+<td class="gt_row gt_right" headers="valor_final">31.4</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #228B22; color: #FFFFFF">22.6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="pais">Francia</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">21.6</td>
+<td class="gt_row gt_right" headers="valor_final">43.4</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #40A23D; color: #FFFFFF">21.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="pais">España</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">22.7</td>
+<td class="gt_row gt_right" headers="valor_final">42.0</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #90EE90; color: #000000">19.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tabla del max paises y min</p>
+</div>
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#Segunda tabla para el menor creciiento:</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>tabla_bottom <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">arrange</span>(crecimiento_total) <span class="sc">|&gt;</span> <span class="co">#</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span>                    </span>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">select</span>(pais, periodo, valor_inicial, valor_final, crecimiento_total) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Evolución educativa estancada**"</span>),</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    <span class="at">subtitle =</span> <span class="st">"Países con el menor crecimiento en el periodo"</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb3-14"><a href="#cb3-14"></a>    <span class="at">columns =</span> <span class="fu">c</span>(valor_inicial, valor_final, crecimiento_total),</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    <span class="at">pais =</span> <span class="st">"País"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="at">periodo =</span> <span class="st">"Periodo"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20"></a>    <span class="at">valor_inicial =</span> <span class="st">"% al inicio"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21"></a>    <span class="at">valor_final =</span> <span class="st">"% actual (Total)"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22"></a>    <span class="at">crecimiento_total =</span> <span class="st">"Crecimiento"</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb3-25"><a href="#cb3-25"></a>    <span class="at">columns =</span> crecimiento_total,</span>
+<span id="cb3-26"><a href="#cb3-26"></a>    <span class="at">method =</span> <span class="st">"numeric"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"red"</span>),</span>
+<span id="cb3-28"><a href="#cb3-28"></a>    <span class="at">reverse =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb3-29"><a href="#cb3-29"></a>tabla_bottom</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div id="ulnpvfcfiv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ulnpvfcfiv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ulnpvfcfiv thead, #ulnpvfcfiv tbody, #ulnpvfcfiv tfoot, #ulnpvfcfiv tr, #ulnpvfcfiv td, #ulnpvfcfiv th {
+  border-style: none;
+}
+
+#ulnpvfcfiv p {
+  margin: 0;
+  padding: 0;
+}
+
+#ulnpvfcfiv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ulnpvfcfiv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ulnpvfcfiv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ulnpvfcfiv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ulnpvfcfiv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ulnpvfcfiv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ulnpvfcfiv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ulnpvfcfiv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ulnpvfcfiv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ulnpvfcfiv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ulnpvfcfiv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ulnpvfcfiv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ulnpvfcfiv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ulnpvfcfiv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ulnpvfcfiv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulnpvfcfiv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ulnpvfcfiv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ulnpvfcfiv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ulnpvfcfiv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulnpvfcfiv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ulnpvfcfiv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulnpvfcfiv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ulnpvfcfiv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulnpvfcfiv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ulnpvfcfiv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulnpvfcfiv .gt_left {
+  text-align: left;
+}
+
+#ulnpvfcfiv .gt_center {
+  text-align: center;
+}
+
+#ulnpvfcfiv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ulnpvfcfiv .gt_font_normal {
+  font-weight: normal;
+}
+
+#ulnpvfcfiv .gt_font_bold {
+  font-weight: bold;
+}
+
+#ulnpvfcfiv .gt_font_italic {
+  font-style: italic;
+}
+
+#ulnpvfcfiv .gt_super {
+  font-size: 65%;
+}
+
+#ulnpvfcfiv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ulnpvfcfiv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ulnpvfcfiv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ulnpvfcfiv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ulnpvfcfiv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ulnpvfcfiv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ulnpvfcfiv .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ulnpvfcfiv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ulnpvfcfiv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="5" class="gt_heading gt_title gt_font_normal"><strong>Evolución educativa estancada</strong></td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Países con el menor crecimiento en el periodo</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="pais" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">País</th>
+<th id="periodo" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Periodo</th>
+<th id="valor_inicial" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">% al inicio</th>
+<th id="valor_final" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">% actual (Total)</th>
+<th id="crecimiento_total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Crecimiento</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="pais">Alemania</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">23.8</td>
+<td class="gt_row gt_right" headers="valor_final">34.5</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #FF0000; color: #FFFFFF">10.7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="pais">Italia</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">9.7</td>
+<td class="gt_row gt_right" headers="valor_final">22.3</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #FF4700; color: #FFFFFF">12.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="pais">España</td>
+<td class="gt_row gt_right" headers="periodo">2000-2024</td>
+<td class="gt_row gt_right" headers="valor_inicial">22.7</td>
+<td class="gt_row gt_right" headers="valor_final">42.0</td>
+<td class="gt_row gt_right" headers="crecimiento_total" style="background-color: #FFA500; color: #000000">19.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tabla del max paises y min</p>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="my_trabajo_BigData_files/figure-html/tabla-paises-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Tabla del max paises y min"><img src="my_trabajo_BigData_files/figure-html/tabla-paises-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%" alt="Tabla del max paises y min"></a></p>
+</figure>
+</div>
+<figcaption>Tabla del max paises y min</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Lo que observamos en la primera tabla es el triunfo de la convergencia.</p>
+<p>Portugal es, sin duda, el protagonista del esfuerzo. Partiendo de una situación crítica en el año 2000, ha logrado un crecimiento exponencial. Se podría decir que valida la hipótesis de que se puede revertir el atraso histórico con políticas fuertes.</p>
+<p>Francia partía de un nivel similar al de España y ha mantenido un ritmo de crecimiento constante.</p>
+<p>En la segunda tabla, la evolución estancada se encuentran matices importantes.</p>
+<p>Es sorprende ver a la Alemania, el gran motor de Europa, con el menor crecimiento. Esto no necesariamente implica fracaso, sino un modelo distinto: Alemania apuesta por la Formación Profesional Dual, que muchas veces no computa como educación terciaria/universitaria, pero que mantiene su economía fuerte.</p>
+<p>El dato más preocupante quizás es el de Italia. Partiendo de un nivel muy bajo similar al de Portugal, su crecimiento ha sido mucho más lento. A diferencia de los portugueses, Italia no ha logrado el impulso necesario para converger con la media europea.</p>
+<p>España aparece en una posición interesante (visible en ambas tablas). Con un crecimiento fuerte. Partíamos del 22.7% y hemos alcanzado el 42.0%, rozando las cifras de Francia. Esto demuestra que España ha sabido adaptarse.</p>
+<p>Los países seleccionados han experimentado una expansión de la educación superior, pero con modelos muy distintos: España y Francia apuestan por la universidad, Alemania por la FP cualificada, e Italia mantiene un retraso estructural.</p>
+<p>La pregunta para la siguiente sección del trabajo será: ¿Se ha traducido este enorme esfuerzo educativo en un crecimiento equivalente de la riqueza (PIB)?</p>
+<hr></section><section id="análisis-espacial-con-coropleta" class="level2"><h2 class="anchored" data-anchor-id="análisis-espacial-con-coropleta">Análisis espacial con coropleta</h2>
+<p>Una vez analizada la tendencia temporal, observamos la distribución espacial. Este mapa de calor nos permite identificar rápidamente si existe una brecha entre los países escogidos en Europa en cuanto a cualificación académica.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>datos_mapa <span class="ot">&lt;-</span> education_clean <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">group_by</span>(iso3c) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">filter</span>(anio <span class="sc">==</span> <span class="fu">max</span>(anio)) <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>mundo <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>mapa_final <span class="ot">&lt;-</span> mundo <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">left_join</span>(datos_mapa, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso_a3"</span> <span class="ot">=</span> <span class="st">"iso3c"</span>))</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mapa_final) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> tasa_educacion), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb4-15"><a href="#cb4-15"></a>    <span class="at">option =</span> <span class="st">"plasma"</span>, </span>
+<span id="cb4-16"><a href="#cb4-16"></a>    <span class="at">name =</span> <span class="st">"% Ed. Superior"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17"></a>    <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb4-18"><a href="#cb4-18"></a>    <span class="at">na.value =</span> <span class="st">"gray90"</span>, </span>
+<span id="cb4-19"><a href="#cb4-19"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>)</span>
+<span id="cb4-20"><a href="#cb4-20"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">25</span>, <span class="dv">45</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">70</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-24"><a href="#cb4-24"></a>    <span class="at">title =</span> <span class="st">"Mapa del nivel de educación superior en Europa"</span>,</span>
+<span id="cb4-25"><a href="#cb4-25"></a>    <span class="at">subtitle =</span> <span class="st">"Porcentaje de población adulta con educación terciaria"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26"></a>    <span class="at">caption =</span> <span class="st">"Fuente: OCDE"</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"#2C3E50"</span>),</span>
+<span id="cb4-30"><a href="#cb4-30"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>) )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="my_trabajo_BigData_files/figure-html/mapa-coropleta-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Mapa de calor del nivel educativo en Europa"><img src="my_trabajo_BigData_files/figure-html/mapa-coropleta-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%" alt="Mapa de calor del nivel educativo en Europa"></a></p>
+</figure>
+</div>
+<figcaption>Mapa de calor del nivel educativo en Europa</figcaption></figure>
+</div>
+</div>
+</div>
+<p>El mapa muestra diferencias en el nivel de educación terciaria en Europa. La educación superior refleja decisiones institucionales y económicas, no valores culturales individuales.</p>
+<hr>
+<section id="gdp" class="level3"><h3 class="anchored" data-anchor-id="gdp">GDP:</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="my_trabajo_BigData_files/figure-html/plot-gdp-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Plot evolución del GDP España"><img src="my_trabajo_BigData_files/figure-html/plot-gdp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%" alt="Plot evolución del GDP España"></a></p>
+</figure>
+</div>
+<figcaption>Plot evolución del GDP España</figcaption></figure>
+</div>
+</div>
+</div>
+<hr></section></section><section id="unión" class="level2"><h2 class="anchored" data-anchor-id="unión">UNIÓN</h2>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>datos_finales <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(education_clean, pib_clean, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"pais"</span>, <span class="st">"anio"</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#ANÁLISIS DE LA CORRELACIÓN:</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">ggplot</span>(datos_finales, <span class="fu">aes</span>(<span class="at">x =</span> tasa_educacion, <span class="at">y =</span> pib)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span> </span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">filter</span>(datos_finales, pais <span class="sc">==</span> <span class="st">"España"</span>), </span>
+<span id="cb5-11"><a href="#cb5-11"></a>             <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  </span>
+<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>  </span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-17"><a href="#cb5-17"></a>    <span class="at">title =</span> <span class="st">"Relación entre Cultura del Esfuerzo y Riqueza"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18"></a>    <span class="at">subtitle =</span> <span class="st">"Correlación entre Nivel Educativo y PIB per cápita (OCDE)"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19"></a>    <span class="at">x =</span> <span class="st">"Población con Educación Superior (%)"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20"></a>    <span class="at">y =</span> <span class="st">"PIB per Cápita ($)"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21"></a>    <span class="at">caption =</span> <span class="st">"Puntos rojos: España | Línea azul: Tendencia Global"</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>  )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="my_trabajo_BigData_files/figure-html/grafico-correlacion-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Correlación entre nivel educativo y PIB"><img src="my_trabajo_BigData_files/figure-html/grafico-correlacion-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%" alt="Correlación entre nivel educativo y PIB"></a></p>
+</figure>
+</div>
+<figcaption>Correlación entre nivel educativo y PIB</figcaption></figure>
+</div>
+</div>
+</div>
+<hr>
+<p><br></p>
+<p>Conclusiones, el fin del inicio: Este trabajo cierra una asignatura, pero abre una nueva ventana en mi proyecto personal.</p>
+<p>A partir de ahora, mi objetivo es unir la sabiduría de los clásicos con el rigor del Big Data. Quiero contar la historia con pruebas, no solo con palabras, demostrando que humanidades y estadística son el equipo perfecto.</p>
+<p>PD: se ha utilizado la I.A. para la realización de las ilustraciones, que por otra parte le dan el toque tan necesario y espero que los videos se visualicen correctamente ya que he tenido ciertas dificultades.</p>
+<p><br></p>
+<hr>
+<p><br></p>
+<section id="información-sobre-la-sesión" class="level3"><h3 class="anchored" data-anchor-id="información-sobre-la-sesión">Información sobre la sesión</h3>
+<p>Abajo muestro mi entorno de trabajo y paquetes utilizados</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<details closed=""><summary><span title="Click to Expand"> current session info </span>
+</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2"></a>─ Session info ───────────────────────────────────────────────────────────────</span>
+<span id="cb6-3"><a href="#cb6-3"></a> setting  value</span>
+<span id="cb6-4"><a href="#cb6-4"></a> version  R version <span class="dv">4</span>.<span class="fl">5.0</span> (<span class="dv">2025-04-11</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a> os       macOS <span class="fl">26.3</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a> system   x86_64, darwin20</span>
+<span id="cb6-7"><a href="#cb6-7"></a> ui       X11</span>
+<span id="cb6-8"><a href="#cb6-8"></a> <span class="fu">language</span> (EN)</span>
+<span id="cb6-9"><a href="#cb6-9"></a> collate  en_US.UTF<span class="dv">-8</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a> ctype    en_US.UTF<span class="dv">-8</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a> tz       Europe<span class="sc">/</span>Madrid</span>
+<span id="cb6-12"><a href="#cb6-12"></a> date     <span class="dv">2026-01-07</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a> pandoc   <span class="dv">3</span>.<span class="fl">6.3</span> <span class="sc">@</span> <span class="er">/</span>Applications<span class="sc">/</span>RStudio.app<span class="sc">/</span>Contents<span class="sc">/</span>Resources<span class="sc">/</span>app<span class="sc">/</span>quarto<span class="sc">/</span>bin<span class="sc">/</span>tools<span class="sc">/</span>x86_64<span class="sc">/</span> (via rmarkdown)</span>
+<span id="cb6-14"><a href="#cb6-14"></a> quarto   <span class="dv">1</span>.<span class="fl">8.24</span> <span class="sc">@</span> <span class="er">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>bin<span class="sc">/</span>quarto</span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a>─ Packages ───────────────────────────────────────────────────────────────────</span>
+<span id="cb6-17"><a href="#cb6-17"></a> package           <span class="sc">*</span> version <span class="fu">date</span> (UTC) lib source</span>
+<span id="cb6-18"><a href="#cb6-18"></a> base64enc           <span class="fl">0.1</span><span class="dv">-3</span>   <span class="dv">2015-07-28</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-19"><a href="#cb6-19"></a> class               <span class="fl">7.3</span><span class="dv">-23</span>  <span class="dv">2025-01-01</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-20"><a href="#cb6-20"></a> classInt            <span class="fl">0.4</span><span class="dv">-11</span>  <span class="dv">2025-01-08</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-21"><a href="#cb6-21"></a> cli                 <span class="dv">3</span>.<span class="fl">6.5</span>   <span class="dv">2025-04-23</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-22"><a href="#cb6-22"></a> clipr               <span class="dv">0</span>.<span class="fl">8.0</span>   <span class="dv">2022-02-22</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-23"><a href="#cb6-23"></a> commonmark          <span class="dv">2</span>.<span class="fl">0.0</span>   <span class="dv">2025-07-07</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-24"><a href="#cb6-24"></a> countrycode       <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">6.1</span>   <span class="dv">2025-03-31</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-25"><a href="#cb6-25"></a> data.table          <span class="dv">1</span>.<span class="fl">17.8</span>  <span class="dv">2025-07-10</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-26"><a href="#cb6-26"></a> DBI                 <span class="dv">1</span>.<span class="fl">2.3</span>   <span class="dv">2024-06-02</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-27"><a href="#cb6-27"></a> desc                <span class="dv">1</span>.<span class="fl">4.3</span>   <span class="dv">2023-12-10</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-28"><a href="#cb6-28"></a> details             <span class="dv">0</span>.<span class="fl">4.0</span>   <span class="dv">2025-02-09</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-29"><a href="#cb6-29"></a> digest              <span class="dv">0</span>.<span class="fl">6.37</span>  <span class="dv">2024-08-19</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-30"><a href="#cb6-30"></a> dplyr             <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">1.4</span>   <span class="dv">2023-11-17</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-31"><a href="#cb6-31"></a> e1071               <span class="fl">1.7</span><span class="dv">-16</span>  <span class="dv">2024-09-16</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-32"><a href="#cb6-32"></a> evaluate            <span class="dv">1</span>.<span class="fl">0.5</span>   <span class="dv">2025-08-27</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-33"><a href="#cb6-33"></a> farver              <span class="dv">2</span>.<span class="fl">1.2</span>   <span class="dv">2024-05-13</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-34"><a href="#cb6-34"></a> fastmap             <span class="dv">1</span>.<span class="fl">2.0</span>   <span class="dv">2024-05-15</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-35"><a href="#cb6-35"></a> fontawesome         <span class="dv">0</span>.<span class="fl">5.3</span>   <span class="dv">2024-11-16</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-36"><a href="#cb6-36"></a> forcats           <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">0.0</span>   <span class="dv">2023-01-29</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-37"><a href="#cb6-37"></a> fs                  <span class="dv">1</span>.<span class="fl">6.6</span>   <span class="dv">2025-04-12</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-38"><a href="#cb6-38"></a> generics            <span class="dv">0</span>.<span class="fl">1.4</span>   <span class="dv">2025-05-09</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-39"><a href="#cb6-39"></a> ggplot2           <span class="sc">*</span> <span class="dv">4</span>.<span class="fl">0.1</span>   <span class="dv">2025-11-14</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-40"><a href="#cb6-40"></a> ggthemes          <span class="sc">*</span> <span class="dv">5</span>.<span class="fl">1.0</span>   <span class="dv">2024-02-10</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-41"><a href="#cb6-41"></a> glue                <span class="dv">1</span>.<span class="fl">8.0</span>   <span class="dv">2024-09-30</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-42"><a href="#cb6-42"></a> gt                <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">2.0</span>   <span class="dv">2025-12-16</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-43"><a href="#cb6-43"></a> gtable              <span class="dv">0</span>.<span class="fl">3.6</span>   <span class="dv">2024-10-25</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-44"><a href="#cb6-44"></a> gtExtras          <span class="sc">*</span> <span class="dv">0</span>.<span class="fl">6.0</span>   <span class="dv">2025-05-29</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-45"><a href="#cb6-45"></a> hms                 <span class="dv">1</span>.<span class="fl">1.3</span>   <span class="dv">2023-03-21</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-46"><a href="#cb6-46"></a> htmltools           <span class="dv">0</span>.<span class="dv">5</span>.<span class="fl">8.1</span> <span class="dv">2024-04-04</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-47"><a href="#cb6-47"></a> htmlwidgets         <span class="dv">1</span>.<span class="fl">6.4</span>   <span class="dv">2023-12-06</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-48"><a href="#cb6-48"></a> httr                <span class="dv">1</span>.<span class="fl">4.7</span>   <span class="dv">2023-08-15</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-49"><a href="#cb6-49"></a> janitor             <span class="dv">2</span>.<span class="fl">2.1</span>   <span class="dv">2024-12-22</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-50"><a href="#cb6-50"></a> jsonlite            <span class="dv">2</span>.<span class="fl">0.0</span>   <span class="dv">2025-03-27</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-51"><a href="#cb6-51"></a> KernSmooth          <span class="fl">2.23</span><span class="dv">-26</span> <span class="dv">2025-01-01</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-52"><a href="#cb6-52"></a> knitr               <span class="fl">1.50</span>    <span class="dv">2025-03-16</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-53"><a href="#cb6-53"></a> labeling            <span class="dv">0</span>.<span class="fl">4.3</span>   <span class="dv">2023-08-29</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-54"><a href="#cb6-54"></a> lattice             <span class="fl">0.22</span><span class="dv">-6</span>  <span class="dv">2024-03-20</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-55"><a href="#cb6-55"></a> lifecycle           <span class="dv">1</span>.<span class="fl">0.4</span>   <span class="dv">2023-11-07</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-56"><a href="#cb6-56"></a> litedown            <span class="fl">0.7</span>     <span class="dv">2025-04-08</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-57"><a href="#cb6-57"></a> lubridate         <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">9.4</span>   <span class="dv">2024-12-08</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-58"><a href="#cb6-58"></a> magrittr            <span class="dv">2</span>.<span class="fl">0.4</span>   <span class="dv">2025-09-12</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-59"><a href="#cb6-59"></a> markdown            <span class="fl">2.0</span>     <span class="dv">2025-03-23</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-60"><a href="#cb6-60"></a> Matrix              <span class="fl">1.7</span><span class="dv">-3</span>   <span class="dv">2025-03-11</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-61"><a href="#cb6-61"></a> mgcv                <span class="fl">1.9</span><span class="dv">-1</span>   <span class="dv">2023-12-21</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-62"><a href="#cb6-62"></a> nlme                <span class="fl">3.1</span><span class="dv">-168</span> <span class="dv">2025-03-31</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-63"><a href="#cb6-63"></a> paletteer           <span class="dv">1</span>.<span class="fl">6.0</span>   <span class="dv">2024-01-21</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-64"><a href="#cb6-64"></a> pillar              <span class="dv">1</span>.<span class="fl">11.0</span>  <span class="dv">2025-07-04</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-65"><a href="#cb6-65"></a> pkgconfig           <span class="dv">2</span>.<span class="fl">0.3</span>   <span class="dv">2019-09-22</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-66"><a href="#cb6-66"></a> png                 <span class="fl">0.1</span><span class="dv">-8</span>   <span class="dv">2022-11-29</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-67"><a href="#cb6-67"></a> proxy               <span class="fl">0.4</span><span class="dv">-27</span>  <span class="dv">2022-06-09</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-68"><a href="#cb6-68"></a> purrr             <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">1.0</span>   <span class="dv">2025-07-10</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-69"><a href="#cb6-69"></a> R.methodsS3         <span class="dv">1</span>.<span class="fl">8.2</span>   <span class="dv">2022-06-13</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-70"><a href="#cb6-70"></a> R.oo                <span class="dv">1</span>.<span class="fl">27.1</span>  <span class="dv">2025-05-02</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-71"><a href="#cb6-71"></a> R.utils             <span class="dv">2</span>.<span class="fl">13.0</span>  <span class="dv">2025-02-24</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-72"><a href="#cb6-72"></a> R6                  <span class="dv">2</span>.<span class="fl">6.1</span>   <span class="dv">2025-02-15</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-73"><a href="#cb6-73"></a> RColorBrewer        <span class="fl">1.1</span><span class="dv">-3</span>   <span class="dv">2022-04-03</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-74"><a href="#cb6-74"></a> Rcpp                <span class="dv">1</span>.<span class="fl">1.0</span>   <span class="dv">2025-07-02</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-75"><a href="#cb6-75"></a> readr             <span class="sc">*</span> <span class="dv">2</span>.<span class="fl">1.5</span>   <span class="dv">2024-01-10</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-76"><a href="#cb6-76"></a> rematch2            <span class="dv">2</span>.<span class="fl">1.2</span>   <span class="dv">2020-05-01</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-77"><a href="#cb6-77"></a> rio                 <span class="dv">1</span>.<span class="fl">2.4</span>   <span class="dv">2025-09-26</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-78"><a href="#cb6-78"></a> rlang               <span class="dv">1</span>.<span class="fl">1.6</span>   <span class="dv">2025-04-11</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-79"><a href="#cb6-79"></a> rmarkdown           <span class="fl">2.29</span>    <span class="dv">2024-11-04</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-80"><a href="#cb6-80"></a> rnaturalearth     <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">1.0</span>   <span class="dv">2025-07-28</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-81"><a href="#cb6-81"></a> rnaturalearthdata <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">0.0</span>   <span class="dv">2024-02-09</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-82"><a href="#cb6-82"></a> rstudioapi          <span class="dv">0</span>.<span class="fl">17.1</span>  <span class="dv">2024-10-22</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-83"><a href="#cb6-83"></a> S7                  <span class="dv">0</span>.<span class="fl">2.0</span>   <span class="dv">2024-11-07</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-84"><a href="#cb6-84"></a> sass                <span class="dv">0</span>.<span class="fl">4.10</span>  <span class="dv">2025-04-11</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-85"><a href="#cb6-85"></a> scales              <span class="dv">1</span>.<span class="fl">4.0</span>   <span class="dv">2025-04-24</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-86"><a href="#cb6-86"></a> sessioninfo         <span class="dv">1</span>.<span class="fl">2.3</span>   <span class="dv">2025-02-05</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-87"><a href="#cb6-87"></a> sf                <span class="sc">*</span> <span class="fl">1.0</span><span class="dv">-23</span>  <span class="dv">2025-11-28</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-88"><a href="#cb6-88"></a> snakecase           <span class="dv">0</span>.<span class="fl">11.1</span>  <span class="dv">2023-08-27</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-89"><a href="#cb6-89"></a> stringi             <span class="dv">1</span>.<span class="fl">8.7</span>   <span class="dv">2025-03-27</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-90"><a href="#cb6-90"></a> stringr           <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">5.2</span>   <span class="dv">2025-09-08</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-91"><a href="#cb6-91"></a> tibble            <span class="sc">*</span> <span class="dv">3</span>.<span class="fl">3.0</span>   <span class="dv">2025-06-08</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-92"><a href="#cb6-92"></a> tidyr             <span class="sc">*</span> <span class="dv">1</span>.<span class="fl">3.1</span>   <span class="dv">2024-01-24</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-93"><a href="#cb6-93"></a> tidyselect          <span class="dv">1</span>.<span class="fl">2.1</span>   <span class="dv">2024-03-11</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-94"><a href="#cb6-94"></a> tidyverse         <span class="sc">*</span> <span class="dv">2</span>.<span class="fl">0.0</span>   <span class="dv">2023-02-22</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-95"><a href="#cb6-95"></a> timechange          <span class="dv">0</span>.<span class="fl">3.0</span>   <span class="dv">2024-01-18</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-96"><a href="#cb6-96"></a> tzdb                <span class="dv">0</span>.<span class="fl">5.0</span>   <span class="dv">2025-03-15</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-97"><a href="#cb6-97"></a> units               <span class="fl">0.8</span><span class="dv">-7</span>   <span class="dv">2025-03-11</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-98"><a href="#cb6-98"></a> vctrs               <span class="dv">0</span>.<span class="fl">6.5</span>   <span class="dv">2023-12-01</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-99"><a href="#cb6-99"></a> viridisLite         <span class="dv">0</span>.<span class="fl">4.2</span>   <span class="dv">2023-05-02</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-100"><a href="#cb6-100"></a> withr               <span class="dv">3</span>.<span class="fl">0.2</span>   <span class="dv">2024-10-28</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-101"><a href="#cb6-101"></a> xfun                <span class="fl">0.53</span>    <span class="dv">2025-08-19</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-102"><a href="#cb6-102"></a> xml2                <span class="dv">1</span>.<span class="fl">4.0</span>   <span class="dv">2025-08-20</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.1</span>)</span>
+<span id="cb6-103"><a href="#cb6-103"></a> yaml                <span class="dv">2</span>.<span class="fl">3.10</span>  <span class="dv">2024-07-26</span> [<span class="dv">1</span>] <span class="fu">CRAN</span> (R <span class="dv">4</span>.<span class="fl">5.0</span>)</span>
+<span id="cb6-104"><a href="#cb6-104"></a></span>
+<span id="cb6-105"><a href="#cb6-105"></a> [<span class="dv">1</span>] <span class="sc">/</span>Library<span class="sc">/</span>Frameworks<span class="sc">/</span>R.framework<span class="sc">/</span>Versions<span class="sc">/</span><span class="fl">4.5</span><span class="sc">-</span>x86_64<span class="sc">/</span>Resources<span class="sc">/</span>library</span>
+<span id="cb6-106"><a href="#cb6-106"></a> <span class="sc">*</span> ── Packages attached to the search path.</span>
+<span id="cb6-107"><a href="#cb6-107"></a></span>
+<span id="cb6-108"><a href="#cb6-108"></a>──────────────────────────────────────────────────────────────────────────────</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details><p><br></p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilizar</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "La cultura del esfuerzo y la riqueza"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">  Análisis del nivel cultural de los países próximos a españa y el nivel de riqueza</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="an">author:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">  - name: Isabel Sanz Miquel</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">    affiliation: Universitat de València</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">    affiliation-url: https://www.uv.es</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="an">date:</span><span class="co"> 2026-01-01                           #--</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="an">categories:</span><span class="co"> [trabajo BigData, estadístico]   #--</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="an">image:</span><span class="co"> "imagenes/uv.png"</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="an">title-block-banner:</span><span class="co"> "imagenes/fondo.png" #- {true, false, "green","#AA0000"}</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="an">title-block-banner-color:</span><span class="co"> "black"    #-"#FFFFFF" </span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="an">toc-depth:</span><span class="co"> 3</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="an">smooth-scroll:</span><span class="co"> true</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co">  html:</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="co">    #backgroundcolor: "#F1F3F4"</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="co">    #embed-resources: true</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co">    link-external-newwindow: true</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co">    #css: assets/my_css_file.css   #- CUIDADO!!!!</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="an">code-link:</span><span class="co"> true</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co">---</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="fu">## Intro: Recuperando la cultura </span></span>
+<span id="cb7-28"><a href="#cb7-28"></a></span>
+<span id="cb7-29"><a href="#cb7-29"></a>Vivimos en un mundo acelerado. En mis canales divulgo la importancia de la pausa, el honor a los antepasados y, sobre todo, la **cultura del esfuerzo**. Pero, ¿es solo una filosofía o tiene un impacto real en la prosperidad de un país?</span>
+<span id="cb7-30"><a href="#cb7-30"></a>En este trabajo analizo datos oficiales de la **OCDE** de los últimos 20 años para responder a una pregunta: **¿Nos hace la cultura más ricos?**.</span>
+<span id="cb7-31"><a href="#cb7-31"></a></span>
+<span id="cb7-32"><a href="#cb7-32"></a>Para este estudio, parto de dos datasets con origen en la base de datos de la OCDE: tasas de educación terciaria y evolución del PIB per cápita. He optado por los datos de la OCDE porque me proporcionaban los años de evolución, en el INE no los conseguí. El primer paso es la introducción y limpieza:</span>
+<span id="cb7-33"><a href="#cb7-33"></a></span>
+<span id="cb7-34"><a href="#cb7-34"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a><span class="in">```{r}</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a><span class="co"># install.packages(c("rnaturalearth", "rnaturalearthdata", "sf"))</span></span>
+<span id="cb7-39"><a href="#cb7-39"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-41"><a href="#cb7-41"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-42"><a href="#cb7-42"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb7-43"><a href="#cb7-43"></a><span class="fu">library</span>(gt)</span>
+<span id="cb7-44"><a href="#cb7-44"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb7-45"><a href="#cb7-45"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-46"><a href="#cb7-46"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb7-47"><a href="#cb7-47"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb7-48"><a href="#cb7-48"></a><span class="fu">library</span>(rnaturalearthdata)</span>
+<span id="cb7-49"><a href="#cb7-49"></a><span class="fu">library</span>(sf)</span>
+<span id="cb7-50"><a href="#cb7-50"></a>ruta_education <span class="ot">&lt;-</span> <span class="st">"./datos/data_education.csv"</span></span>
+<span id="cb7-51"><a href="#cb7-51"></a>data_education <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(ruta_education)</span>
+<span id="cb7-52"><a href="#cb7-52"></a></span>
+<span id="cb7-53"><a href="#cb7-53"></a></span>
+<span id="cb7-54"><a href="#cb7-54"></a></span>
+<span id="cb7-55"><a href="#cb7-55"></a>ruta_gdp <span class="ot">&lt;-</span> <span class="st">"./datos/data_gdp.csv"</span></span>
+<span id="cb7-56"><a href="#cb7-56"></a>data_gdp <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(ruta_gdp)</span>
+<span id="cb7-57"><a href="#cb7-57"></a></span>
+<span id="cb7-58"><a href="#cb7-58"></a><span class="in">```</span></span>
+<span id="cb7-59"><a href="#cb7-59"></a></span>
+<span id="cb7-60"><a href="#cb7-60"></a></span>
+<span id="cb7-61"><a href="#cb7-61"></a>---</span>
+<span id="cb7-62"><a href="#cb7-62"></a></span>
+<span id="cb7-63"><a href="#cb7-63"></a><span class="fu">## Ranking países máximos y mínimos.</span></span>
+<span id="cb7-64"><a href="#cb7-64"></a></span>
+<span id="cb7-65"><a href="#cb7-65"></a>Vamos a arreglar los datos y a representar las tablas</span>
+<span id="cb7-66"><a href="#cb7-66"></a></span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="in">```{r}</span></span>
+<span id="cb7-70"><a href="#cb7-70"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-71"><a href="#cb7-71"></a><span class="co">#| label: tabla-paises</span></span>
+<span id="cb7-72"><a href="#cb7-72"></a><span class="co">#| fig-cap: "Tabla del max paises y min"</span></span>
+<span id="cb7-73"><a href="#cb7-73"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-74"><a href="#cb7-74"></a>data_education <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(data_education)</span>
+<span id="cb7-75"><a href="#cb7-75"></a></span>
+<span id="cb7-76"><a href="#cb7-76"></a>education_clean <span class="ot">&lt;-</span> data_education <span class="sc">|&gt;</span> </span>
+<span id="cb7-77"><a href="#cb7-77"></a>  <span class="fu">select</span>(<span class="at">iso3c =</span> ref_area, <span class="at">anio =</span> time_period, <span class="at">tasa_educacion =</span> obs_value) <span class="sc">|&gt;</span> </span>
+<span id="cb7-78"><a href="#cb7-78"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-79"><a href="#cb7-79"></a>    <span class="at">anio =</span> <span class="fu">as.numeric</span>(anio), </span>
+<span id="cb7-80"><a href="#cb7-80"></a>    <span class="at">tasa_educacion =</span> <span class="fu">as.numeric</span>(tasa_educacion), </span>
+<span id="cb7-81"><a href="#cb7-81"></a>    <span class="at">pais =</span> <span class="fu">countrycode</span>(iso3c, <span class="at">origin =</span> <span class="st">"iso3c"</span>, <span class="at">destination =</span> <span class="st">"un.name.es"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-82"><a href="#cb7-82"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(tasa_educacion), <span class="sc">!</span><span class="fu">is.na</span>(pais)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-83"><a href="#cb7-83"></a>  <span class="fu">arrange</span>(pais, anio)</span>
+<span id="cb7-84"><a href="#cb7-84"></a></span>
+<span id="cb7-85"><a href="#cb7-85"></a>paises_interes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"España"</span>, <span class="st">"Francia"</span>, <span class="st">"Alemania"</span>, <span class="st">"Italia"</span>)</span>
+<span id="cb7-86"><a href="#cb7-86"></a></span>
+<span id="cb7-87"><a href="#cb7-87"></a>education_clean <span class="sc">|&gt;</span> </span>
+<span id="cb7-88"><a href="#cb7-88"></a>  <span class="fu">filter</span>(pais <span class="sc">%in%</span> paises_interes) <span class="sc">|&gt;</span> </span>
+<span id="cb7-89"><a href="#cb7-89"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> anio, <span class="at">y =</span> tasa_educacion, <span class="at">color =</span> pais)) <span class="sc">+</span></span>
+<span id="cb7-90"><a href="#cb7-90"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb7-91"><a href="#cb7-91"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span>       </span>
+<span id="cb7-92"><a href="#cb7-92"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>            </span>
+<span id="cb7-93"><a href="#cb7-93"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-94"><a href="#cb7-94"></a>    <span class="at">title =</span> <span class="st">"Evolución de la formación superior en Europa"</span>,</span>
+<span id="cb7-95"><a href="#cb7-95"></a>    <span class="at">subtitle =</span> <span class="st">"Porcentaje de población adulta (25-64) con estudios terciarios"</span>,</span>
+<span id="cb7-96"><a href="#cb7-96"></a>    <span class="at">y =</span> <span class="st">"Porcentaje (%)"</span>,</span>
+<span id="cb7-97"><a href="#cb7-97"></a>    <span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb7-98"><a href="#cb7-98"></a>    <span class="at">color =</span> <span class="st">"País"</span></span>
+<span id="cb7-99"><a href="#cb7-99"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-100"><a href="#cb7-100"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb7-101"><a href="#cb7-101"></a></span>
+<span id="cb7-102"><a href="#cb7-102"></a></span>
+<span id="cb7-103"><a href="#cb7-103"></a><span class="co">#TABLAS:</span></span>
+<span id="cb7-104"><a href="#cb7-104"></a><span class="co">#Primero calculo la evolución:</span></span>
+<span id="cb7-105"><a href="#cb7-105"></a>ranking_evolucion <span class="ot">&lt;-</span> education_clean <span class="sc">|&gt;</span></span>
+<span id="cb7-106"><a href="#cb7-106"></a>  <span class="fu">group_by</span>(pais) <span class="sc">|&gt;</span></span>
+<span id="cb7-107"><a href="#cb7-107"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-108"><a href="#cb7-108"></a>    <span class="at">anio_inicio =</span> <span class="fu">min</span>(anio),</span>
+<span id="cb7-109"><a href="#cb7-109"></a>    <span class="at">anio_fin =</span> <span class="fu">max</span>(anio),</span>
+<span id="cb7-110"><a href="#cb7-110"></a>    <span class="at">valor_inicial =</span> <span class="fu">first</span>(tasa_educacion, <span class="at">order_by =</span> anio),</span>
+<span id="cb7-111"><a href="#cb7-111"></a>    <span class="at">valor_final =</span> <span class="fu">last</span>(tasa_educacion, <span class="at">order_by =</span> anio)</span>
+<span id="cb7-112"><a href="#cb7-112"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-113"><a href="#cb7-113"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-114"><a href="#cb7-114"></a>    <span class="at">crecimiento_total =</span> valor_final <span class="sc">-</span> valor_inicial,</span>
+<span id="cb7-115"><a href="#cb7-115"></a>    <span class="at">periodo =</span> <span class="fu">paste0</span>(anio_inicio, <span class="st">"-"</span>, anio_fin)</span>
+<span id="cb7-116"><a href="#cb7-116"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-117"><a href="#cb7-117"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb7-118"><a href="#cb7-118"></a></span>
+<span id="cb7-119"><a href="#cb7-119"></a>ranking_evolucion <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(crecimiento_total))  </span>
+<span id="cb7-120"><a href="#cb7-120"></a></span>
+<span id="cb7-121"><a href="#cb7-121"></a><span class="co">#Luego hago la tabla:</span></span>
+<span id="cb7-122"><a href="#cb7-122"></a></span>
+<span id="cb7-123"><a href="#cb7-123"></a><span class="co"># Primera tabla: top 3 con mayor crecimiento</span></span>
+<span id="cb7-124"><a href="#cb7-124"></a>tabla_top <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span></span>
+<span id="cb7-125"><a href="#cb7-125"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(crecimiento_total)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-126"><a href="#cb7-126"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span>                         </span>
+<span id="cb7-127"><a href="#cb7-127"></a>  <span class="fu">select</span>(pais, periodo, valor_inicial, valor_final, crecimiento_total) <span class="sc">|&gt;</span></span>
+<span id="cb7-128"><a href="#cb7-128"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-129"><a href="#cb7-129"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb7-130"><a href="#cb7-130"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Líderes en crecimiento crecimiento**"</span>),</span>
+<span id="cb7-131"><a href="#cb7-131"></a>    <span class="at">subtitle =</span> <span class="st">"Países con mayor crecimiento en población con educación superior"</span></span>
+<span id="cb7-132"><a href="#cb7-132"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-133"><a href="#cb7-133"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb7-134"><a href="#cb7-134"></a>    <span class="at">columns =</span> <span class="fu">c</span>(valor_inicial, valor_final, crecimiento_total),</span>
+<span id="cb7-135"><a href="#cb7-135"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb7-136"><a href="#cb7-136"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-137"><a href="#cb7-137"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb7-138"><a href="#cb7-138"></a>    <span class="at">pais =</span> <span class="st">"País"</span>,</span>
+<span id="cb7-139"><a href="#cb7-139"></a>    <span class="at">periodo =</span> <span class="st">"Periodo"</span>,</span>
+<span id="cb7-140"><a href="#cb7-140"></a>    <span class="at">valor_inicial =</span> <span class="st">"% del inicio"</span>,</span>
+<span id="cb7-141"><a href="#cb7-141"></a>    <span class="at">valor_final =</span> <span class="st">"% Actual (Total)"</span>,</span>
+<span id="cb7-142"><a href="#cb7-142"></a>    <span class="at">crecimiento_total =</span> <span class="st">"Crecimiento (+)"</span></span>
+<span id="cb7-143"><a href="#cb7-143"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-144"><a href="#cb7-144"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb7-145"><a href="#cb7-145"></a>    <span class="at">columns =</span> crecimiento_total,</span>
+<span id="cb7-146"><a href="#cb7-146"></a>    <span class="at">method =</span> <span class="st">"numeric"</span>,</span>
+<span id="cb7-147"><a href="#cb7-147"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"lightgreen"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb7-148"><a href="#cb7-148"></a>  )</span>
+<span id="cb7-149"><a href="#cb7-149"></a></span>
+<span id="cb7-150"><a href="#cb7-150"></a>tabla_top</span>
+<span id="cb7-151"><a href="#cb7-151"></a></span>
+<span id="cb7-152"><a href="#cb7-152"></a><span class="co">#Segunda tabla para el menor creciiento:</span></span>
+<span id="cb7-153"><a href="#cb7-153"></a></span>
+<span id="cb7-154"><a href="#cb7-154"></a>tabla_bottom <span class="ot">&lt;-</span> ranking_evolucion <span class="sc">|&gt;</span></span>
+<span id="cb7-155"><a href="#cb7-155"></a>  <span class="fu">arrange</span>(crecimiento_total) <span class="sc">|&gt;</span> <span class="co">#</span></span>
+<span id="cb7-156"><a href="#cb7-156"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span>                    </span>
+<span id="cb7-157"><a href="#cb7-157"></a>  <span class="fu">select</span>(pais, periodo, valor_inicial, valor_final, crecimiento_total) <span class="sc">|&gt;</span></span>
+<span id="cb7-158"><a href="#cb7-158"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-159"><a href="#cb7-159"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb7-160"><a href="#cb7-160"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Evolución educativa estancada**"</span>),</span>
+<span id="cb7-161"><a href="#cb7-161"></a>    <span class="at">subtitle =</span> <span class="st">"Países con el menor crecimiento en el periodo"</span></span>
+<span id="cb7-162"><a href="#cb7-162"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-163"><a href="#cb7-163"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb7-164"><a href="#cb7-164"></a>    <span class="at">columns =</span> <span class="fu">c</span>(valor_inicial, valor_final, crecimiento_total),</span>
+<span id="cb7-165"><a href="#cb7-165"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb7-166"><a href="#cb7-166"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-167"><a href="#cb7-167"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb7-168"><a href="#cb7-168"></a>    <span class="at">pais =</span> <span class="st">"País"</span>,</span>
+<span id="cb7-169"><a href="#cb7-169"></a>    <span class="at">periodo =</span> <span class="st">"Periodo"</span>,</span>
+<span id="cb7-170"><a href="#cb7-170"></a>    <span class="at">valor_inicial =</span> <span class="st">"% al inicio"</span>,</span>
+<span id="cb7-171"><a href="#cb7-171"></a>    <span class="at">valor_final =</span> <span class="st">"% actual (Total)"</span>,</span>
+<span id="cb7-172"><a href="#cb7-172"></a>    <span class="at">crecimiento_total =</span> <span class="st">"Crecimiento"</span></span>
+<span id="cb7-173"><a href="#cb7-173"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-174"><a href="#cb7-174"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb7-175"><a href="#cb7-175"></a>    <span class="at">columns =</span> crecimiento_total,</span>
+<span id="cb7-176"><a href="#cb7-176"></a>    <span class="at">method =</span> <span class="st">"numeric"</span>,</span>
+<span id="cb7-177"><a href="#cb7-177"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"red"</span>),</span>
+<span id="cb7-178"><a href="#cb7-178"></a>    <span class="at">reverse =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb7-179"><a href="#cb7-179"></a>tabla_bottom</span>
+<span id="cb7-180"><a href="#cb7-180"></a></span>
+<span id="cb7-181"><a href="#cb7-181"></a><span class="in">```</span></span>
+<span id="cb7-182"><a href="#cb7-182"></a></span>
+<span id="cb7-183"><a href="#cb7-183"></a>Lo que observamos en la primera tabla es el triunfo de la convergencia.</span>
+<span id="cb7-184"><a href="#cb7-184"></a></span>
+<span id="cb7-185"><a href="#cb7-185"></a>Portugal es, sin duda, el protagonista del esfuerzo. Partiendo de una situación crítica en el año 2000, ha logrado un crecimiento exponencial. Se podría decir que valida la hipótesis de que se puede revertir el atraso histórico con políticas fuertes.</span>
+<span id="cb7-186"><a href="#cb7-186"></a></span>
+<span id="cb7-187"><a href="#cb7-187"></a>Francia partía de un nivel similar al de España y ha mantenido un ritmo de crecimiento constante.</span>
+<span id="cb7-188"><a href="#cb7-188"></a></span>
+<span id="cb7-189"><a href="#cb7-189"></a>En la segunda tabla, la evolución estancada se encuentran matices importantes. </span>
+<span id="cb7-190"><a href="#cb7-190"></a></span>
+<span id="cb7-191"><a href="#cb7-191"></a>Es sorprende ver a la Alemania, el gran motor de Europa, con el menor crecimiento. Esto no necesariamente implica fracaso, sino un modelo distinto: Alemania apuesta por la Formación Profesional Dual, que muchas veces no computa como educación terciaria/universitaria, pero que mantiene su economía fuerte.</span>
+<span id="cb7-192"><a href="#cb7-192"></a></span>
+<span id="cb7-193"><a href="#cb7-193"></a>El dato más preocupante quizás es el de Italia. Partiendo de un nivel muy bajo similar al de Portugal, su crecimiento ha sido mucho más lento. A diferencia de los portugueses, Italia no ha logrado el impulso necesario para converger con la media europea.</span>
+<span id="cb7-194"><a href="#cb7-194"></a></span>
+<span id="cb7-195"><a href="#cb7-195"></a>España aparece en una posición interesante (visible en ambas tablas). Con un crecimiento fuerte. Partíamos del 22.7% y hemos alcanzado el 42.0%, rozando las cifras de Francia. Esto demuestra que España ha sabido adaptarse. </span>
+<span id="cb7-196"><a href="#cb7-196"></a></span>
+<span id="cb7-197"><a href="#cb7-197"></a>Los países seleccionados han experimentado una expansión de la educación superior, pero con modelos muy distintos:</span>
+<span id="cb7-198"><a href="#cb7-198"></a>España y Francia apuestan por la universidad, Alemania por la FP cualificada, e Italia mantiene un retraso estructural.</span>
+<span id="cb7-199"><a href="#cb7-199"></a></span>
+<span id="cb7-200"><a href="#cb7-200"></a>La pregunta para la siguiente sección del trabajo será: ¿Se ha traducido este enorme esfuerzo educativo en un crecimiento equivalente de la riqueza (PIB)?</span>
+<span id="cb7-201"><a href="#cb7-201"></a></span>
+<span id="cb7-202"><a href="#cb7-202"></a></span>
+<span id="cb7-203"><a href="#cb7-203"></a>---</span>
+<span id="cb7-204"><a href="#cb7-204"></a></span>
+<span id="cb7-205"><a href="#cb7-205"></a><span class="fu">## Análisis espacial con coropleta</span></span>
+<span id="cb7-206"><a href="#cb7-206"></a></span>
+<span id="cb7-207"><a href="#cb7-207"></a>Una vez analizada la tendencia temporal, observamos la distribución espacial. Este mapa de calor nos permite identificar rápidamente si existe una brecha entre los países escogidos en Europa en cuanto a cualificación académica.</span>
+<span id="cb7-208"><a href="#cb7-208"></a></span>
+<span id="cb7-209"><a href="#cb7-209"></a></span>
+<span id="cb7-212"><a href="#cb7-212"></a><span class="in">```{r}</span></span>
+<span id="cb7-213"><a href="#cb7-213"></a><span class="co">#| label: mapa-coropleta</span></span>
+<span id="cb7-214"><a href="#cb7-214"></a><span class="co">#| fig-cap: "Mapa de calor del nivel educativo en Europa"</span></span>
+<span id="cb7-215"><a href="#cb7-215"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-216"><a href="#cb7-216"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-217"><a href="#cb7-217"></a></span>
+<span id="cb7-218"><a href="#cb7-218"></a>datos_mapa <span class="ot">&lt;-</span> education_clean <span class="sc">|&gt;</span></span>
+<span id="cb7-219"><a href="#cb7-219"></a>  <span class="fu">group_by</span>(iso3c) <span class="sc">|&gt;</span> </span>
+<span id="cb7-220"><a href="#cb7-220"></a>  <span class="fu">filter</span>(anio <span class="sc">==</span> <span class="fu">max</span>(anio)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-221"><a href="#cb7-221"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb7-222"><a href="#cb7-222"></a></span>
+<span id="cb7-223"><a href="#cb7-223"></a></span>
+<span id="cb7-224"><a href="#cb7-224"></a>mundo <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb7-225"><a href="#cb7-225"></a></span>
+<span id="cb7-226"><a href="#cb7-226"></a>mapa_final <span class="ot">&lt;-</span> mundo <span class="sc">|&gt;</span></span>
+<span id="cb7-227"><a href="#cb7-227"></a>  <span class="fu">left_join</span>(datos_mapa, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso_a3"</span> <span class="ot">=</span> <span class="st">"iso3c"</span>))</span>
+<span id="cb7-228"><a href="#cb7-228"></a></span>
+<span id="cb7-229"><a href="#cb7-229"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mapa_final) <span class="sc">+</span></span>
+<span id="cb7-230"><a href="#cb7-230"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> tasa_educacion), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb7-231"><a href="#cb7-231"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb7-232"><a href="#cb7-232"></a>    <span class="at">option =</span> <span class="st">"plasma"</span>, </span>
+<span id="cb7-233"><a href="#cb7-233"></a>    <span class="at">name =</span> <span class="st">"% Ed. Superior"</span>,</span>
+<span id="cb7-234"><a href="#cb7-234"></a>    <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb7-235"><a href="#cb7-235"></a>    <span class="at">na.value =</span> <span class="st">"gray90"</span>, </span>
+<span id="cb7-236"><a href="#cb7-236"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>)</span>
+<span id="cb7-237"><a href="#cb7-237"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-238"><a href="#cb7-238"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">25</span>, <span class="dv">45</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">70</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-239"><a href="#cb7-239"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb7-240"><a href="#cb7-240"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-241"><a href="#cb7-241"></a>    <span class="at">title =</span> <span class="st">"Mapa del nivel de educación superior en Europa"</span>,</span>
+<span id="cb7-242"><a href="#cb7-242"></a>    <span class="at">subtitle =</span> <span class="st">"Porcentaje de población adulta con educación terciaria"</span>,</span>
+<span id="cb7-243"><a href="#cb7-243"></a>    <span class="at">caption =</span> <span class="st">"Fuente: OCDE"</span></span>
+<span id="cb7-244"><a href="#cb7-244"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-245"><a href="#cb7-245"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-246"><a href="#cb7-246"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"#2C3E50"</span>),</span>
+<span id="cb7-247"><a href="#cb7-247"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
+<span id="cb7-248"><a href="#cb7-248"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb7-249"><a href="#cb7-249"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>) )</span>
+<span id="cb7-250"><a href="#cb7-250"></a><span class="in">```</span></span>
+<span id="cb7-251"><a href="#cb7-251"></a></span>
+<span id="cb7-252"><a href="#cb7-252"></a>El mapa muestra diferencias en el nivel de educación terciaria en Europa. La educación superior refleja decisiones institucionales y económicas, no valores culturales individuales.</span>
+<span id="cb7-253"><a href="#cb7-253"></a></span>
+<span id="cb7-254"><a href="#cb7-254"></a></span>
+<span id="cb7-255"><a href="#cb7-255"></a>---</span>
+<span id="cb7-256"><a href="#cb7-256"></a></span>
+<span id="cb7-257"><a href="#cb7-257"></a><span class="fu">### GDP:</span></span>
+<span id="cb7-258"><a href="#cb7-258"></a></span>
+<span id="cb7-261"><a href="#cb7-261"></a><span class="in">```{r}</span></span>
+<span id="cb7-262"><a href="#cb7-262"></a><span class="co">#| label: plot-gdp</span></span>
+<span id="cb7-263"><a href="#cb7-263"></a><span class="co">#| fig-cap: "Plot evolución del GDP España"</span></span>
+<span id="cb7-264"><a href="#cb7-264"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-265"><a href="#cb7-265"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-266"><a href="#cb7-266"></a><span class="co">#- primer gráfico</span></span>
+<span id="cb7-267"><a href="#cb7-267"></a>data_gdp <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(data_gdp)</span>
+<span id="cb7-268"><a href="#cb7-268"></a></span>
+<span id="cb7-269"><a href="#cb7-269"></a>pib_clean <span class="ot">&lt;-</span> data_gdp <span class="sc">|&gt;</span></span>
+<span id="cb7-270"><a href="#cb7-270"></a>  <span class="fu">select</span>(</span>
+<span id="cb7-271"><a href="#cb7-271"></a>    <span class="at">iso3c =</span> country,      </span>
+<span id="cb7-272"><a href="#cb7-272"></a>    <span class="at">anio =</span> time_period,   </span>
+<span id="cb7-273"><a href="#cb7-273"></a>    <span class="at">pib =</span> obs_value       </span>
+<span id="cb7-274"><a href="#cb7-274"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-275"><a href="#cb7-275"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-276"><a href="#cb7-276"></a>    <span class="at">anio =</span> <span class="fu">as.numeric</span>(anio),</span>
+<span id="cb7-277"><a href="#cb7-277"></a>    <span class="at">pib =</span> <span class="fu">as.numeric</span>(pib),</span>
+<span id="cb7-278"><a href="#cb7-278"></a>    <span class="at">pais =</span> <span class="fu">countrycode</span>(iso3c, <span class="at">origin =</span> <span class="st">"iso3c"</span>, <span class="at">destination =</span> <span class="st">"un.name.es"</span>)</span>
+<span id="cb7-279"><a href="#cb7-279"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-280"><a href="#cb7-280"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pib), <span class="sc">!</span><span class="fu">is.na</span>(pais)) <span class="sc">|&gt;</span></span>
+<span id="cb7-281"><a href="#cb7-281"></a>  <span class="fu">arrange</span>(pais, anio)</span>
+<span id="cb7-282"><a href="#cb7-282"></a></span>
+<span id="cb7-283"><a href="#cb7-283"></a></span>
+<span id="cb7-284"><a href="#cb7-284"></a>pib_clean <span class="sc">|&gt;</span></span>
+<span id="cb7-285"><a href="#cb7-285"></a>  <span class="fu">filter</span>(pais <span class="sc">==</span> <span class="st">"España"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-286"><a href="#cb7-286"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> anio, <span class="at">y =</span> pib)) <span class="sc">+</span></span>
+<span id="cb7-287"><a href="#cb7-287"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-288"><a href="#cb7-288"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Evolución de la Riqueza en España"</span>, <span class="at">y =</span> <span class="st">"PIB per cápita ($)"</span>)</span>
+<span id="cb7-289"><a href="#cb7-289"></a></span>
+<span id="cb7-290"><a href="#cb7-290"></a><span class="in">```</span></span>
+<span id="cb7-291"><a href="#cb7-291"></a></span>
+<span id="cb7-292"><a href="#cb7-292"></a></span>
+<span id="cb7-293"><a href="#cb7-293"></a>---</span>
+<span id="cb7-294"><a href="#cb7-294"></a></span>
+<span id="cb7-295"><a href="#cb7-295"></a><span class="fu">## UNIÓN</span></span>
+<span id="cb7-296"><a href="#cb7-296"></a></span>
+<span id="cb7-299"><a href="#cb7-299"></a><span class="in">```{r}</span></span>
+<span id="cb7-300"><a href="#cb7-300"></a><span class="co">#| label: grafico-correlacion</span></span>
+<span id="cb7-301"><a href="#cb7-301"></a><span class="co">#| fig-cap: "Correlación entre nivel educativo y PIB"</span></span>
+<span id="cb7-302"><a href="#cb7-302"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-303"><a href="#cb7-303"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-304"><a href="#cb7-304"></a></span>
+<span id="cb7-305"><a href="#cb7-305"></a>datos_finales <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(education_clean, pib_clean, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"pais"</span>, <span class="st">"anio"</span>))</span>
+<span id="cb7-306"><a href="#cb7-306"></a></span>
+<span id="cb7-307"><a href="#cb7-307"></a></span>
+<span id="cb7-308"><a href="#cb7-308"></a></span>
+<span id="cb7-309"><a href="#cb7-309"></a><span class="co">#ANÁLISIS DE LA CORRELACIÓN:</span></span>
+<span id="cb7-310"><a href="#cb7-310"></a><span class="fu">ggplot</span>(datos_finales, <span class="fu">aes</span>(<span class="at">x =</span> tasa_educacion, <span class="at">y =</span> pib)) <span class="sc">+</span></span>
+<span id="cb7-311"><a href="#cb7-311"></a></span>
+<span id="cb7-312"><a href="#cb7-312"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span> </span>
+<span id="cb7-313"><a href="#cb7-313"></a></span>
+<span id="cb7-314"><a href="#cb7-314"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">filter</span>(datos_finales, pais <span class="sc">==</span> <span class="st">"España"</span>), </span>
+<span id="cb7-315"><a href="#cb7-315"></a>             <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-316"><a href="#cb7-316"></a>  </span>
+<span id="cb7-317"><a href="#cb7-317"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb7-318"><a href="#cb7-318"></a>  </span>
+<span id="cb7-319"><a href="#cb7-319"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-320"><a href="#cb7-320"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-321"><a href="#cb7-321"></a>    <span class="at">title =</span> <span class="st">"Relación entre Cultura del Esfuerzo y Riqueza"</span>,</span>
+<span id="cb7-322"><a href="#cb7-322"></a>    <span class="at">subtitle =</span> <span class="st">"Correlación entre Nivel Educativo y PIB per cápita (OCDE)"</span>,</span>
+<span id="cb7-323"><a href="#cb7-323"></a>    <span class="at">x =</span> <span class="st">"Población con Educación Superior (%)"</span>,</span>
+<span id="cb7-324"><a href="#cb7-324"></a>    <span class="at">y =</span> <span class="st">"PIB per Cápita ($)"</span>,</span>
+<span id="cb7-325"><a href="#cb7-325"></a>    <span class="at">caption =</span> <span class="st">"Puntos rojos: España | Línea azul: Tendencia Global"</span></span>
+<span id="cb7-326"><a href="#cb7-326"></a>  )</span>
+<span id="cb7-327"><a href="#cb7-327"></a></span>
+<span id="cb7-328"><a href="#cb7-328"></a><span class="in">```</span></span>
+<span id="cb7-329"><a href="#cb7-329"></a></span>
+<span id="cb7-330"><a href="#cb7-330"></a>---</span>
+<span id="cb7-331"><a href="#cb7-331"></a></span>
+<span id="cb7-332"><a href="#cb7-332"></a></span>
+<span id="cb7-333"><a href="#cb7-333"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-334"><a href="#cb7-334"></a></span>
+<span id="cb7-335"><a href="#cb7-335"></a>Conclusiones, el fin del inicio: Este trabajo cierra una asignatura, pero abre una nueva ventana en mi proyecto personal. </span>
+<span id="cb7-336"><a href="#cb7-336"></a></span>
+<span id="cb7-337"><a href="#cb7-337"></a>A partir de ahora, mi objetivo es unir la sabiduría de los clásicos con el rigor del Big Data. Quiero contar la historia con pruebas, no solo con palabras, demostrando que humanidades y estadística son el equipo perfecto.</span>
+<span id="cb7-338"><a href="#cb7-338"></a></span>
+<span id="cb7-339"><a href="#cb7-339"></a></span>
+<span id="cb7-340"><a href="#cb7-340"></a>PD: se ha utilizado la I.A. para la realización de las ilustraciones, que por otra parte le dan el toque tan necesario y espero que los videos se visualicen correctamente ya que he tenido ciertas dificultades. </span>
+<span id="cb7-341"><a href="#cb7-341"></a></span>
+<span id="cb7-342"><a href="#cb7-342"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-343"><a href="#cb7-343"></a></span>
+<span id="cb7-344"><a href="#cb7-344"></a></span>
+<span id="cb7-345"><a href="#cb7-345"></a>----------------------</span>
+<span id="cb7-346"><a href="#cb7-346"></a></span>
+<span id="cb7-347"><a href="#cb7-347"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-348"><a href="#cb7-348"></a></span>
+<span id="cb7-349"><a href="#cb7-349"></a><span class="fu">### Información sobre la sesión</span></span>
+<span id="cb7-350"><a href="#cb7-350"></a></span>
+<span id="cb7-351"><a href="#cb7-351"></a>Abajo muestro mi entorno de trabajo y paquetes utilizados</span>
+<span id="cb7-352"><a href="#cb7-352"></a></span>
+<span id="cb7-355"><a href="#cb7-355"></a><span class="in">```{r}</span></span>
+<span id="cb7-356"><a href="#cb7-356"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-357"><a href="#cb7-357"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-358"><a href="#cb7-358"></a>  details<span class="sc">::</span><span class="fu">details</span>(<span class="at">summary =</span> <span class="st">'current session info'</span>) </span>
+<span id="cb7-359"><a href="#cb7-359"></a><span class="in">```</span></span>
+<span id="cb7-360"><a href="#cb7-360"></a></span>
+<span id="cb7-361"><a href="#cb7-361"></a></span>
+</code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Isabel Sanz Miquel</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/IsabelSanz87">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:isanzmi@alumni.uv.es">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

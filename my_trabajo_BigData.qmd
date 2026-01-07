@@ -1,0 +1,350 @@
+---
+title: "Un análisis del nivel educativo terciario y la riqueza"
+description: |
+  Análisis del nivel cultural de los países próximos a España y el nivel de riqueza
+author:
+  - name: Isabel Sanz Miquel
+    affiliation: Universitat de València
+    affiliation-url: https://www.uv.es
+date: 2026-01-01                           #--
+categories: [trabajo BigData, estadístico]   #--
+image: "imagenes/uv.png"
+title-block-banner: "imagenes/fondo.png" #- {true, false, "green","#AA0000"}
+title-block-banner-color: "black"    #-"#FFFFFF" 
+toc-depth: 3
+smooth-scroll: true
+format: 
+  html:
+    #backgroundcolor: "#F1F3F4"
+    #embed-resources: true
+    link-external-newwindow: true
+    #css: assets/my_css_file.css   #- CUIDADO!!!!
+code-tools: true
+code-link: true
+---
+
+
+## Intro: Recuperando la cultura 
+
+Vivimos en un mundo acelerado. En mis canales divulgo la importancia de la pausa, el honor a los antepasados y, sobre todo, la **cultura del esfuerzo**. Pero, ¿es solo una filosofía o tiene un impacto real en la prosperidad de un país?
+En este trabajo analizo datos oficiales de la **OCDE** de los últimos 20 años para responder a una pregunta: **¿Nos hace la cultura más ricos?**.
+
+Para este estudio, parto de dos datasets con origen en la base de datos de la OCDE: tasas de educación terciaria y evolución del PIB per cápita. He optado por los datos de la OCDE porque me proporcionaban los años de evolución, en el INE no los conseguí. El primer paso es la introducción y limpieza:
+
+
+```{r}
+# install.packages(c("rnaturalearth", "rnaturalearthdata", "sf"))
+library(tidyverse)
+library(readr)
+library(ggplot2)
+library(ggthemes)
+library(gt)
+library(gtExtras)
+library(dplyr)
+library(countrycode)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sf)
+ruta_education <- "./datos/data_education.csv"
+data_education <- rio::import(ruta_education)
+
+
+
+ruta_gdp <- "./datos/data_gdp.csv"
+data_gdp <- rio::import(ruta_gdp)
+
+```
+
+
+---
+
+## Ranking países máximos y mínimos.
+
+Vamos a arreglar los datos y a representar las tablas
+
+```{r}
+#| echo: true
+#| label: tabla-paises
+#| fig-cap: "Tabla del max paises y min"
+#| warning: false
+data_education <- janitor::clean_names(data_education)
+
+education_clean <- data_education |> 
+  select(iso3c = ref_area, anio = time_period, tasa_educacion = obs_value) |> 
+  mutate(
+    anio = as.numeric(anio), 
+    tasa_educacion = as.numeric(tasa_educacion), 
+    pais = countrycode(iso3c, origin = "iso3c", destination = "un.name.es")) |> 
+  filter(!is.na(tasa_educacion), !is.na(pais)) |> 
+  arrange(pais, anio)
+
+paises_interes <- c("España", "Francia", "Alemania", "Italia")
+
+education_clean |> 
+  filter(pais %in% paises_interes) |> 
+  ggplot(aes(x = anio, y = tasa_educacion, color = pais)) +
+  geom_line() + 
+  geom_point(size = 2) +       
+  theme_minimal() +            
+  labs(
+    title = "Evolución de la formación superior en Europa",
+    subtitle = "Porcentaje de población adulta (25-64) con estudios terciarios",
+    y = "Porcentaje (%)",
+    x = "Año",
+    color = "País"
+  ) +
+  theme(legend.position = "bottom")
+
+
+#TABLAS:
+#Primero calculo la evolución:
+ranking_evolucion <- education_clean |>
+  group_by(pais) |>
+  summarise(
+    anio_inicio = min(anio),
+    anio_fin = max(anio),
+    valor_inicial = first(tasa_educacion, order_by = anio),
+    valor_final = last(tasa_educacion, order_by = anio)
+  ) |>
+  mutate(
+    crecimiento_total = valor_final - valor_inicial,
+    periodo = paste0(anio_inicio, "-", anio_fin)
+  ) |>
+  ungroup()
+
+ranking_evolucion <- ranking_evolucion |> filter(!is.na(crecimiento_total))  
+
+#Luego hago la tabla:
+
+# Primera tabla: top 3 con mayor crecimiento
+tabla_top <- ranking_evolucion |>
+  arrange(desc(crecimiento_total)) |> 
+  head(3) |>                         
+  select(pais, periodo, valor_inicial, valor_final, crecimiento_total) |>
+  gt() |>
+  tab_header(
+    title = md("**Líderes en crecimiento crecimiento**"),
+    subtitle = "Países con mayor crecimiento en población con educación superior"
+  ) |>
+  fmt_number(
+    columns = c(valor_inicial, valor_final, crecimiento_total),
+    decimals = 1
+  ) |>
+  cols_label(
+    pais = "País",
+    periodo = "Periodo",
+    valor_inicial = "% del inicio",
+    valor_final = "% Actual (Total)",
+    crecimiento_total = "Crecimiento (+)"
+  ) |>
+  data_color(
+    columns = crecimiento_total,
+    method = "numeric",
+    palette = c("lightgreen", "forestgreen")
+  )
+
+tabla_top
+
+#Segunda tabla para el menor creciiento:
+
+tabla_bottom <- ranking_evolucion |>
+  arrange(crecimiento_total) |> #
+  head(3) |>                    
+  select(pais, periodo, valor_inicial, valor_final, crecimiento_total) |>
+  gt() |>
+  tab_header(
+    title = md("**Evolución educativa estancada**"),
+    subtitle = "Países con el menor crecimiento en el periodo"
+  ) |>
+  fmt_number(
+    columns = c(valor_inicial, valor_final, crecimiento_total),
+    decimals = 1
+  ) |>
+  cols_label(
+    pais = "País",
+    periodo = "Periodo",
+    valor_inicial = "% al inicio",
+    valor_final = "% actual (Total)",
+    crecimiento_total = "Crecimiento"
+  ) |>
+  data_color(
+    columns = crecimiento_total,
+    method = "numeric",
+    palette = c("orange", "red"),
+    reverse = TRUE )
+tabla_bottom
+
+```
+
+Lo que observamos en la primera tabla es el triunfo de la convergencia.
+
+Portugal es, sin duda, el protagonista del esfuerzo. Partiendo de una situación crítica en el año 2000, ha logrado un crecimiento exponencial. Se podría decir que valida la hipótesis de que se puede revertir el atraso histórico con políticas fuertes.
+
+Francia partía de un nivel similar al de España y ha mantenido un ritmo de crecimiento constante.
+
+En la segunda tabla, la evolución estancada se encuentran matices importantes. 
+
+Es sorprende ver a la Alemania, el gran motor de Europa, con el menor crecimiento. Esto no necesariamente implica fracaso, sino un modelo distinto: Alemania apuesta por la Formación Profesional Dual, que muchas veces no computa como educación terciaria/universitaria, pero que mantiene su economía fuerte.
+
+El dato más preocupante quizás es el de Italia. Partiendo de un nivel muy bajo similar al de Portugal, su crecimiento ha sido mucho más lento. A diferencia de los portugueses, Italia no ha logrado el impulso necesario para converger con la media europea.
+
+España aparece en una posición interesante (visible en ambas tablas). Con un crecimiento fuerte. Partíamos del 22.7% y hemos alcanzado el 42.0%, rozando las cifras de Francia. Esto demuestra que España ha sabido adaptarse. 
+
+Los países seleccionados han experimentado una expansión de la educación superior, pero con modelos muy distintos:
+España y Francia apuestan por la universidad, Alemania por la FP cualificada, e Italia mantiene un retraso estructural.
+
+La pregunta para la siguiente sección del trabajo será: ¿Se ha traducido este enorme esfuerzo educativo en un crecimiento equivalente de la riqueza (PIB)?
+
+
+---
+
+## Análisis espacial con coropleta
+
+Una vez analizada la tendencia temporal, observamos la distribución espacial. Este mapa de calor nos permite identificar rápidamente si existe una brecha entre los países escogidos en Europa en cuanto a cualificación académica.
+
+
+```{r}
+#| label: mapa-coropleta
+#| fig-cap: "Mapa de calor del nivel educativo en Europa"
+#| warning: false
+#| echo: true
+
+datos_mapa <- education_clean |>
+  group_by(iso3c) |> 
+  filter(anio == max(anio)) |> 
+  ungroup()
+
+
+mundo <- ne_countries(scale = "medium", returnclass = "sf")
+
+mapa_final <- mundo |>
+  left_join(datos_mapa, by = c("iso_a3" = "iso3c"))
+
+ggplot(data = mapa_final) +
+  geom_sf(aes(fill = tasa_educacion), color = "white", size = 0.2) +
+  scale_fill_viridis_c(
+    option = "plasma", 
+    name = "% Ed. Superior",
+    direction = -1,
+    na.value = "gray90", 
+    labels = scales::percent_format(scale = 1)
+  ) +
+  coord_sf(xlim = c(-25, 45), ylim = c(34, 70), expand = FALSE) +
+  theme_void() +
+  labs(
+    title = "Mapa del nivel de educación superior en Europa",
+    subtitle = "Porcentaje de población adulta con educación terciaria",
+    caption = "Fuente: OCDE"
+  ) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5, color = "#2C3E50"),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, color = "gray40"),
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold") )
+```
+
+El mapa muestra diferencias en el nivel de educación terciaria en Europa. La educación superior refleja decisiones institucionales y económicas, no valores culturales individuales.
+
+
+---
+
+### GDP:
+
+```{r}
+#| label: plot-gdp
+#| fig-cap: "Plot evolución del GDP España"
+#| warning: false
+#| echo: false
+#- primer gráfico
+data_gdp <- janitor::clean_names(data_gdp)
+
+pib_clean <- data_gdp |>
+  select(
+    iso3c = country,      
+    anio = time_period,   
+    pib = obs_value       
+  ) |>
+  mutate(
+    anio = as.numeric(anio),
+    pib = as.numeric(pib),
+    pais = countrycode(iso3c, origin = "iso3c", destination = "un.name.es")
+  ) |>
+  filter(!is.na(pib), !is.na(pais)) |>
+  arrange(pais, anio)
+
+
+pib_clean |>
+  filter(pais == "España") |>
+  ggplot(aes(x = anio, y = pib)) +
+  geom_line(color = "blue", linewidth = 1) +
+  labs(title = "Evolución de la Riqueza en España", y = "PIB per cápita ($)")
+
+```
+
+
+---
+
+## UNIÓN
+
+```{r}
+#| label: grafico-correlacion
+#| fig-cap: "Correlación entre nivel educativo y PIB"
+#| echo: true
+#| warning: false
+
+datos_finales <- inner_join(education_clean, pib_clean, by = c("pais", "anio"))
+
+
+
+#ANÁLISIS DE LA CORRELACIÓN:
+ggplot(datos_finales, aes(x = tasa_educacion, y = pib)) +
+
+  geom_point(alpha = 0.3, color = "gray50") + 
+
+  geom_point(data = filter(datos_finales, pais == "España"), 
+             color = "red", size = 2) +
+  
+  geom_smooth(method = "lm", color = "blue", fill = "lightblue") +
+  
+  theme_minimal() +
+  labs(
+    title = "Relación entre Cultura del Esfuerzo y Riqueza",
+    subtitle = "Correlación entre Nivel Educativo y PIB per cápita (OCDE)",
+    x = "Población con Educación Superior (%)",
+    y = "PIB per Cápita ($)",
+    caption = "Puntos rojos: España | Línea azul: Tendencia Global"
+  )
+
+```
+
+---
+
+
+<br>
+
+Conclusiones, el fin del inicio: Este trabajo cierra una asignatura, pero abre una nueva ventana en mi proyecto personal. 
+
+A partir de ahora, mi objetivo es unir la sabiduría de los clásicos con el rigor del Big Data. Quiero contar la historia con pruebas, no solo con palabras, demostrando que humanidades y estadística son el equipo perfecto.
+
+
+PD: se ha utilizado la I.A. para la realización de las ilustraciones, que por otra parte le dan el toque tan necesario y espero que los videos se visualicen correctamente ya que he tenido ciertas dificultades. 
+
+<br>
+
+
+----------------------
+
+<br>
+
+### Información sobre la sesión
+
+Abajo muestro mi entorno de trabajo y paquetes utilizados
+
+```{r}
+#| echo: false
+sessioninfo::session_info() %>% 
+  details::details(summary = 'current session info') 
+```
+
+
+
