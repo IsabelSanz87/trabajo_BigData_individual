@@ -1,0 +1,71 @@
+---
+title: "Sobre mí"
+image: imagenes/mi_imagen.png  
+about:
+  template: trestles        
+  links:
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/ecosdenuestrosclasicos/
+    - icon: youtube
+      text: Youtube
+      href: https://www.youtube.com/@Ecosdenuestrosclásicos
+    - icon: tiktok
+      text: TikTok
+      href: https://www.tiktok.com/@ecosdenuestrosclasicos
+---
+
+## Mi Propósito
+
+Vivimos en la era de la inmediatez. Mi nombre es *Isabel Sanz* y mi misión es recuperar el valor de la pausa, el honor a nuestros antepasados y la cultura del esfuerzo.
+
+No soy solo estudiante de GECO en la Universitat de València; soy una divulgadora apasionada por conectar la sabiduría del pasado con los datos del presente. Mi formación previa en Filología Clásica me ha permitido leer, traducir e interpretar las fuentes originales. Lejos de apartarme de la Economía, esta perspectiva humanista la dota de un contexto vital: creo que la economía está más presente en los clásicos de lo que imaginamos.
+
+Si bien este proyecto presenta un análisis bastante pobre e introductorio, mi intención es que sirva como primer paso para sentar las bases de una investigación más profunda. Mi objetivo último es demostrar la máxima de Santayana:
+
+> *"Those who cannot remember the past are condemned to repeat it - The life of reason (Santayana)"*
+
+Y eso se hará buscando en las fuentes antiguas e intentando encontrar la correlación con los shocks actuales. Si estamos repitiendo la misma historia que hace 100 años, ¿por qué no la misma de hace 2000? 
+
+Adjunto video dedicado al pensamiento de Santayana: 
+
+{{< video https://www.youtube.com/watch?v=cg-IAGT_8y0 >}}
+
+## ¿Qué encontrarás aquí?
+
+La fusión de dos mundos:
+
+1.  **La lógica de los datos:** Utilizando herramientas como RStudio y Quarto para desenterrar verdades estadísticas.
+2.  **El alma de la história:** Contando la historia detrás de los números.
+
+> *"✨La cultura no es un adorno, es el motor de la riqueza de las naciones✨"*
+
+Aquí muestro uno de los recientes podcast sobre la desmitificación de los mitos, nuestra visión es bastante distorsionada de lo que realmente vivian y pensaban. Los relatos nos han llegado fragmentados, reinterpretados y adaptados a contextos muy distintos del original.
+Algo similar ocurre en la actualidda cuando analizamos datos sociales y educativos: los indicadores cuantitativos pueden generar interpretaciones simplificadas que no siempre reflejan la complejidad del fenómeno que se analiza. Tanto en los mitos como en los datos, la clave está en aprender a distinguir entre la fuente original y las interpretaciones posteriores.
+
+{{< video https://youtu.be/eYn40M6wf9s >}}
+
+---
+
+## Trayectoria
+
+-   **Estudios:** Grado en Economía (GECO) - Universitat de València.
+-   **Intereses:** Big Data, Historia Económica, Divulgación Digital.
+-   **Proyecto Actual:** Análisis de la correlación entre Educación y PIB en la OCDE.
+
+Soy totalmente consciente de que mis ideas viajan hoy más rápido que mi capacidad para programarlas. Conozco mis limitaciones actuales: mi dominio del código es aún escaso y sé que es la barrera que me separa de la profundidad de análisis que quiero alcanzar.
+
+Lejos de desmotivarme, este proyecto marca un punto de inflexión. He entendido que para unir el rigor de los clásicos con la economía moderna, necesito dominar más que bien el análisis de los datos. Este trabajo no es solo una muestra de lo que sé, sino un compromiso público con lo que voy a aprender.
+
+---
+
+## Aprendizaje: la respuesta digital
+
+Es fácil caer en el cinismo de pensar que en plataformas como TikTok, YouTube o Spotify solo triunfa lo efímero. Sin embargo, en menos de un mes y medio, la realidad me ha demostrado lo contrario, más concretamente en la plataforma de Instagram.
+
+La acogida del inicio proyecto ha sido el combustible que necesitaba. He descubierto que la gente no se ha olvidado del pasado; simplemente estaban esperando una nueva forma de escucharlo. No buscan la típica historieta para ir a dormir ni una lección académica vacia; buscan respuestas vitales.
+
+Ver cómo una comunidad creciente se vuelca en aprender de los clásicos en pleno siglo XXI valida mi hipótesis y mi objetivo futuro: demostrar que la historia no es un relato inerte, sino una herramienta viva para entender nuestro presente.
+
+PD: en este trabajo se reconoce el uso de la I.A. para la realización de las ilustraciones, tan necesarias para un buen aspecto 😆. 
+
